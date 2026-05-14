@@ -1,14 +1,14 @@
-# Ticket System
+# Mini Gestor de Incidencia
 
-## Installation
+## Instalación
 
 ### 1. Clone repository
 
 ```bash
-git clone URL
+git clone https://github.com/DevilsWillCry/prueba-tecnica-sio.git
 ```
 
-### 2. Install dependencies
+### 2. Instala las dependencias
 
 Frontend:
 
@@ -26,44 +26,44 @@ pnpm install
 
 ---
 
-## Database Setup
+## Configuración de la BD MySQL
 
-### 1. Create database
+### 1. Crea la BD
 
 ```sql
 CREATE DATABASE tickets_db;
 USE tickets_db;
 ```
 
-### 2. Execute schema.sql
+### 2. Ejecuta schema.sql
 
-Import:
+Ve a:
 
 ```txt
 backend-nodejs/database/schema.sql
 ```
 
-using MySQL Workbench.
+usando MySQL Workbench.
 
 ---
 
-## Environment Variables
+## Variable de entorno
 
-Create:
+Crea:
 
 ```txt
 backend-nodejs/.env
 ```
 
-using:
+Toma de ejemplo:
 
 ```txt
-backend-nodejs/.env
+backend-nodejs/.env.example
 ```
 
 ---
 
-## Run backend
+## Ejecuta el backend 
 
 ```bash
 pnpm run dev
@@ -71,7 +71,7 @@ pnpm run dev
 
 ---
 
-## Run frontend
+## Ejecuta el frontend
 
 ```bash
 pnpm run dev
