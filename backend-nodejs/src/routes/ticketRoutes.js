@@ -1,4 +1,3 @@
-// Routes de tickets
 import express from "express";
 const router = express.Router();
 

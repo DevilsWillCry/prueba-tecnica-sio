@@ -1,7 +1,3 @@
-//* Validaciones de tickets - Middleware
-//? 1. Se encargan de verificar que el cliente envíe datos correctos antes de llegar al controlador o servicio.
-//? 2. En caso de que no sean correctos, se devuelve un mensaje de error.
-
 export const validateTicket = (req, res, next) => {
   const { titulo, descripcion, estado } = req.body;
   const validStates = ["Abierto", "Cerrado"];

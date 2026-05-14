@@ -11,11 +11,11 @@ interface Ticket {
   updated_at: string;
 }
 function ListTicket() {
-  const {  loading, error } = useFetch<Ticket[]>();
-  const { tickets, setTickets } = useTickets();
+  const { loading, error } = useFetch<Ticket[]>();
+  const { tickets, setTickets, API_URL } = useTickets();
 
   const handleUpdateStateTicket = async (id: number, state: string) => {
-    await fetch(`http://localhost:8000/api/tickets/${id}`, {
+    await fetch(`${API_URL}/api/tickets/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ estado: state }),

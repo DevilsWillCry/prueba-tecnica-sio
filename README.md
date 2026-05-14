@@ -52,6 +52,10 @@ usando MySQL Workbench.
 Crea:
 
 ```txt
+frontend-react/.env
+```
+
+```txt
 backend-nodejs/.env
 ```
 
@@ -59,6 +63,7 @@ Toma de ejemplo:
 
 ```txt
 backend-nodejs/.env.example
+frontend-react/.env.example
 ```
 
 ---

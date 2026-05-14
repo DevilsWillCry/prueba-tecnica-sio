@@ -1,7 +1,3 @@
-//* ticketController.js -> Controlador de tickets
-//? 1. Validaciones de estado o datos antes de crear o actualizar tickets.
-//? 2. Transformación de datos de tickets, añadir timestamps, limpiar campos
-
 import { TicketService } from "#services/ticketService.js";
 
 export const TicketController = {

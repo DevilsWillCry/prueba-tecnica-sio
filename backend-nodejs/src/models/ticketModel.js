@@ -1,4 +1,3 @@
-// models /ticketModel.js
 import { connection } from "../config/db.js";
 
 

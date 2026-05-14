@@ -22,7 +22,7 @@ interface Ticket {
 function FormTicket({ className, ...props }: formProps) {
   const { data, loading, error, fetchData } = useFetch<Ticket>();
 
-  const { setTickets } = useTickets();
+  const { setTickets, API_URL } = useTickets();
 
   const handleSubmit = async (event: React.SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -31,7 +31,7 @@ function FormTicket({ className, ...props }: formProps) {
 
     const formValues = Object.fromEntries(formData);
 
-    const newTicket = await fetchData("http://localhost:8000/api/tickets/", {
+    const newTicket = await fetchData(`${API_URL}/api/tickets/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

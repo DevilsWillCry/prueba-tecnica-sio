@@ -1,4 +1,3 @@
-// services /ticketService.js
 import { TicketModel } from "../models/ticketModel.js";
 
 export const TicketService = {

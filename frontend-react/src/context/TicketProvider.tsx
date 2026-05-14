@@ -8,6 +8,7 @@ import {
 import type { ReactNode } from "react";
 
 import { useFetch } from "../hooks/useFetch";
+const API_URL = import.meta.env.VITE_API_URL;
 
 interface Ticket {
   id: number;
@@ -23,6 +24,7 @@ interface TicketContextType {
   loading: boolean;
   error: Error | null;
   setTickets: React.Dispatch<React.SetStateAction<Ticket[]>>;
+  API_URL: string
 }
 
 const TicketContext = createContext<TicketContextType | undefined>(undefined);
@@ -33,7 +35,7 @@ export function TicketProvider({ children }: { children: ReactNode }) {
   const [tickets, setTickets] = useState<Ticket[]>([]);
 
   useEffect(() => {
-    fetchData("http://localhost:8000/api/tickets/", {
+    fetchData(`${API_URL}/api/tickets/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -54,6 +56,7 @@ export function TicketProvider({ children }: { children: ReactNode }) {
         loading,
         error,
         setTickets,
+        API_URL
       }}
     >
       {children}
@@ -65,7 +68,7 @@ export function useTickets() {
   const context = useContext(TicketContext);
 
   if (!context) {
-    throw new Error("useTickets must be used within TicketProvider");
+    throw new Error("useTickets debe ser usado dentro de TicketProvider");
   }
 
   return context;
