@@ -1,0 +1,32 @@
+{
+  "name": "backend-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch src/index.js",
+    "dev": "nodemon --watch src --ext js,json --signal SIGTERM src/index.js"
+  },
+  "keywords": [],
+  "author": "Miguel Angel Meñaca Coral",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.3",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "imports": {
+    "#controllers/*": "./src/controllers/*",
+    "#routes/*": "./src/routes/*",
+    "#models/*": "./src/models/*",
+    "#services/*": "./src/services/*"
+  },
+  "type": "module"
+}

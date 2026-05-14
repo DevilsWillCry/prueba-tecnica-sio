@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap&family=Inter:wght@300;400;500&family=Caveat:wght@400;500&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  /* Palette to use in BG colors or Text colors */
+  --color-accent: oklch(62.544% 0.20196 32.075);
+  --color-paper: oklch(95.853% 0.00974 87.437);
+  --color-ink: oklch(19.174% 0.01021 88.81);
+  --color-bone: oklch(95.853% 0.00974 87.437);
+  --color-ash: oklch(94.253% 0.00256 107.088);
+  --color-snow: oklch(98.427% 0.00385 106.918);
+  --color-carbon: oklch(19.174% 0.01021 88.81);
+  --color-indigo: oklch(21.891% 0.04262 261.638);
+  --color-black: oklch(0% 0 0);
+
+  --color-forest: oklch(0.32 0.04 155);
+  --color-forest-deep: oklch(0.24 0.035 155);
+  --color-sage: oklch(0.78 0.03 130);
+  --color-sage-soft: oklch(0.88 0.02 130);
+  --color-cream: oklch(0.96 0.015 90);
+  --color-cream-warm: oklch(0.93 0.02 85);
+  --color-clay: oklch(0.58 0.09 50);
+  --color-clay-soft: oklch(0.82 0.04 50);
+  --color-ink: oklch(0.22 0.01 150);
+  --color-ink-muted: oklch(0.45 0.01 150);
+  --color-line: oklch(0.85 0.01 130);
+  --color-line-soft: oklch(0.91 0.008 130);
+
+  --color-bg-0: #0a0712;
+  --color-bg-1: #14102a;
+  --color-bg-2: #221636;
+  --color-ink: #f4ecdc;
+  --color-ink-dim: #c9bda6;
+  --color-ink-mute: #8a8099;
+  --color-warm: #f5c98c;
+  --color-warm-2: #e89b6c;
+  --color-rose: #f0a6b6;
+  --color-plum: #8a5a9c;
+  --color-night: #2a1d4a;
+
+  --font-serif: "Instrument Serif", "Times New Roman", serif;
+  --font-mono: "Caveat", monospace;
+
+  --animate-throwing-y-scroll: scroll-animation 1.5s ease-in-out infinite;
+  --animate-letter-in: letterIn 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  --animate-fade-up: fadeUp 1.4s ease 2.6s forwards;
+  --animate-scroll-down: scrollDown 2.4s ease-in-out infinite;
+  --animate-float: float 12s ease-in-out infinite;
+  --animate-ring-pulse: ringPulse 3s ease-in-out infinite;
+  --animate-breathe: breathe 6s ease-in-out infinite;
+
+  @keyframes scroll-animation {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(10rem);
+    }
+  }
+
+  @keyframes letterIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  };
+
+   @keyframes scrollDown {
+    0% { top: -30%; }
+    100% { top: 130%; }
+  };
+
+  @keyframes float {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(40px, -30px) scale(1.05); }
+    66% { transform: translate(-30px, 20px) scale(.95); }
+  };
+
+   @keyframes ringPulse {
+    0% { transform: scale(.6); opacity: 1; }
+    100% { transform: scale(2.2); opacity: 0; }
+  };
+
+   @keyframes breathe {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+  };
+}
