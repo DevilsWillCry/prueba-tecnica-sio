@@ -2,7 +2,7 @@
 
 ## Instalación
 
-### 1. Clone repository
+### 1. Clona el repository
 
 ```bash
 git clone https://github.com/DevilsWillCry/prueba-tecnica-sio.git
