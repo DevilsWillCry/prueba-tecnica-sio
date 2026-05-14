@@ -4,7 +4,8 @@ import { connection } from "../config/db.js";
 export const TicketModel = {
   async getAllTickets() {
     const [rows] = await connection.query("SELECT * FROM tickets");
-    return rows;
+    const rowTimeZoneFormated= rows.map(row => ({ ...row, created_at: new Date(row.created_at).toLocaleString('es-CO', { timeZone: 'America/Bogota' }) }))
+    return rowTimeZoneFormated;
   },
 
   async getById(id) {
@@ -27,7 +28,8 @@ export const TicketModel = {
       "INSERT INTO tickets (titulo, descripcion, estado) VALUES (?,?,?)",
       [titulo, descripcion, estado],
     );
-    return { id: result.insertId, titulo, descripcion, estado };
+    const formatedCreateAt = new Date(result.insertId).toLocaleString('es-CO', { timeZone: 'America/Bogota' })
+    return { id: result.insertId, titulo, descripcion, estado, created_at: formatedCreateAt};
   },
 
   async updateStatus(id, estado) {

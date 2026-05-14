@@ -28,6 +28,13 @@ function ListTicket() {
     );
   };
 
+  const handleDeleteTicket = async (id: number) => {
+    await fetch(`${API_URL}/api/tickets/${id}`, {
+      method: "DELETE",
+    });
+    setTickets((prevTickets) => prevTickets.filter((ticket) => ticket.id !== id));
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -46,6 +53,7 @@ function ListTicket() {
             <th className="text-start">Descripción</th>
             <th className="text-start">Estado</th>
             <th className="text-start">Fecha de creación</th>
+            <th className="text-start">Acciones</th>
           </tr>
         </thead>
         <tbody className="text-start text-ink items-center">
@@ -67,6 +75,18 @@ function ListTicket() {
                 />{" "}
               </td>
               <td>{ticket.created_at}</td>
+              <td>
+                <ButtonTicket
+                  onClick={() =>
+                    handleDeleteTicket(
+                      ticket.id,
+                    )
+                  }
+                  type="button"
+                  className="w-4/5 bg-red-400 hover:bg-red-600"
+                  text="X"
+                />{" "}
+              </td>
             </tr>
           ))}
         </tbody>

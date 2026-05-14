@@ -18,7 +18,7 @@ export const TicketService = {
         const ticket = {
             titulo,
             descripcion,
-            estado: ticketState
+            estado: ticketState,
         }
         return await TicketModel.create(ticket);
     },
